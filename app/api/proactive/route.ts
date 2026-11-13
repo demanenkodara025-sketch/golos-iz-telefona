@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     return Response.json({ ok: true, skipped: true, reason: "Proactive messages are disabled" });
   }
 
-  const chats = await redis.smembers<string>("proactive_chats");
+const chats = await redis.smembers("proactive_chats");
   const greetings = [
     "Эй, как ты там? Заглянул узнать, как день проходит ❤️",
     "Ну что, как настроение? Есть что рассказать? 🌶️",
